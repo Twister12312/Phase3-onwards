@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+<h2>Feedback form</h2>
+<form name="formid" action=webapi/product method="post">
+Enter Feedback:<input type="text" class="Feedback" id="Feedback" required> <br>
+<input type="button"  id="submit" onclick="submitData()" value="SEND">
+</form>
+<script>
+function submitData(){
+	
+	var description=$('#Feedback').val();
+	jsonObject={
+			"description":""
+	}
+	jsonObject.description= description;
+	var str=JSON.stringify(jsonObject);
+	$.ajax({
+		  type: "POST",
+		  url: "http://localhost:8080/webapi/feedback",
+		  data: str,
+		  success: function(){},
+		  dataType: "json",
+		  contentType : "application/json"
+		});
+}
+
+</script>
+</body>
+</html>
