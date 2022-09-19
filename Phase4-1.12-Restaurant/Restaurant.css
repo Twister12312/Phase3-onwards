@@ -1,0 +1,61 @@
+.menu{
+    margin: 0%;
+    background-color: rgb(107, 11, 6);
+    border:1px solid rgb(107, 11, 6);
+}
+
+.menu li a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+
+}
+h1{
+    font-family: 'Gang of Three', sans-serif;
+                                                
+}
+.menu li{
+padding: 10px;
+display: inline-block;
+}
+
+.menu li:hover{
+    background-color: rgb(202, 28, 19);
+    
+}
+
+.menu li a:hover{
+    color: white;
+}
+
+header{
+    text-align: center;
+}
+
+.overview,h3,.bestsellers li,.desc{
+    font-family: Roboto, Arial;
+    font-weight: 500;
+    font-size: 25px;
+    width: 50%;
+}
+
+.carousel-inner{
+   height:424px;
+   padding-left: 30%;
+   background-color: rgb(248, 239, 239);
+}
+
+.bestsellers li a{
+    text-decoration: none;
+    color:black;
+}
+
+.intro{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+footer{
+    font-family: Roboto, Arial;
+    font-weight: 500;
+    font-size: 15px;
+}
