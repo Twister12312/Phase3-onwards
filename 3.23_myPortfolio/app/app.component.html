@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+ 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container"> 
+  <nav class="navbar navbar-expand-lg navbar-light ">
+          <ul class="nav navbar-nav float-left" routerLinkActive="active">
+                   <li class="nav-item">   <img class="ima" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.indiamart.com%2Fproddetail%2Fstationery-notebook-14162915891.html&psig=AOvVaw1wOvhBr5RZ4_E6bn4zssZo&ust=1664709547646000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKjpjrz0vvoCFQAAAAAdAAAAABAE" alt="image" style="width:auto;">
+                    <a class="btn" routerLink="/">myPortFolio</a></li>
+          </ul>
+           <ul class="nav navbar-nav " style="margin-left: 70%" routerLinkActive="active">
+                  <li class="nav-item"><a class=" btn" routerLink="/signin" style="margin: 5px;">Sign In</a></li>
+                  <li class="nav-item"><a class="btn" routerLink="/signup"  style="margin: 5px">Sign Up</a> </li>
+          </ul>
+  </nav>
+  <div class="container">
+  <router-outlet></router-outlet>
+  </div>
+</div>
+</body>
+</html>

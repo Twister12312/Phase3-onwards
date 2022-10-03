@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        table, th, td {
+  border: 1px solid black;
+}
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" 
+    src="custom.js"></script>
+    <!--****************************************Script****************************************-->
+    <script >
+        function push(){
+            var ven=document.getElementById("vendor").value;
+            var price= document.getElementById("price").value;
+            if(!list.has(ven)){
+            list.set(ven,price);}
+            
+        }
+
+        function retrieve(){
+            let text=table;
+            amount=0;
+            list.forEach ((value, key)=> 
+  text +="<tr><td>" +key +"</td>" +"<td>"+ value + "</td></tr>"
+
+)
+
+list.forEach ((value, key)=> 
+  amount+=parseInt(value)
+)
+document.getElementById("name").innerHTML="<table>"+text+"</table>";
+document.getElementById("stat").innerHTML="Statistics:"+"<br>"+"Total Budget: "+budget+"<br>"+
+                                          "Amount Used: "+amount+"<br>"+
+                                          "Remaining Amount: "+ (budget-amount);
+        }
+    </script>
+ <!--******************************************BODY*******************************************-->    
+</head>
+<body>
+    <h2>Manager Adding Vendor Details</h2>
+    <input type="text" id="vendor" placeholder="Enter Vendor" /><br>
+    <input type="text" id="price" placeholder="Enter Price" /><br><br><br>
+      <input type="button" value="Submit" onClick="push()">
+<br><br><br>
+
+
+<h2>Accounts of Vendors and expenses:</h2>
+Retrieve finance details<br><br><input type="button" value="Recieve" onClick="retrieve()"><br>
+
+            <p id="name"></p>
+           
+            <p id="stat"></p>
+</body>
+</html>

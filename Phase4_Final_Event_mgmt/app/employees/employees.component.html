@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <link rel="stylesheet" href="employees.component.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+<div class="container" >
+  <nav style="margin-bottom: 30px;">
+    <ul class="menu">
+    <li><a routerLink="/employees">PORTAL</a></li>
+    <li><a routerLink="/home">Home</a></li>
+    <li class="selected"><a routerLink="/employees" class="link">Employees</a></li>
+    <li style="margin-left: 760px;"><a routerLink="/login">Logout</a></li>
+
+    </ul>
+</nav>
+    
+    <table class="table"  style="margin: 0px; border: 1px solid rgb(216, 211, 211);">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{employee.id}}</td>
+          <td>{{employee.first_name}}</td>
+          <td>{{employee.last_name}}</td>
+          <td>{{employee.email}}</td>
+          <td>
+           
+            <button type="button" class="btn btn-primary" style="background-color: grey;
+            border-color: grey;" (click)="redirect(employee.id)">View Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <button type="button" class="btn btn-success" (click)="this.createnew=true"
+    style="background-color: grey;
+            border-color: grey;">Add new Employee</button>
+    <div *ngIf="createnew">
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)" style="width: 40%;">
+            <div class="form-group" >
+                <label for="UserId">Admin User Id:</label>
+                <input required ngModel name="idty" type="text" #idty="ngModel" class="form-control" id="idty">
+                <div class="alert alert-danger" *ngIf="idty.touched && !idty.valid">
+                  <div *ngIf="idty.errors?.required">Id no. is required.</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="First Name">Employee First Name:</label>
+                <input required ngModel name="firstName" type="text" #firstName="ngModel" class="form-control" id="firstName">
+                <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+                  <div *ngIf="firstName.errors?.required">First Name is required.</div>
+                  </div>
+              </div>
+                <div class="form-group">
+                    <label for="Last Name">Employee Last Name:</label>
+                <input required ngModel name="LastName" type="text" #LastName="ngModel" class="form-control" id="LastName">
+                <div class="alert alert-danger" *ngIf="LastName.touched && !LastName.valid">
+                  <div *ngIf="LastName.errors?.required">Last Name is required.</div>
+                  </div>
+              </div>
+                <div class="form-group">
+                    <label for="Email">Email:</label>
+                    <input required ngModel name="email" type="text" #email="ngModel" class="form-control" id="email">
+                    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                      <div *ngIf="email.errors?.required">Email is required.</div>
+                      </div>
+                </div>
+                <br>
+                <button class="btn btn-primary" type="submit" [class.disabled]="!contactForm.valid">Submit</button>      
+          
+</form>
+
+    </div>
+  </div>
+</body>
+</html>
