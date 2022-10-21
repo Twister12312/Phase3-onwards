@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <!--<link rel="stylesheet" href="employees.component.css">-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+<button type="button" style="margin:8px; margin-left: 90%;" class="btn btn-primary" (click)="Logout()">Logout</button> 
+<h2 style="margin:0px;">Welcome User</h2>
+<div *ngIf="user.aadharno==null" style="padding: top 20px;">
+<h3>You do NOT have an Aadharcard.</h3>
+<p>Name: {{user.name}}</p>
+<p>DOB: {{user.dob}}</p>
+<p>Gender: {{user.gender}}</p>
+<br><br>
+<button type="button" style="margin:8px;" class="btn btn-primary" (click)="New(user.mail)">New Aadhar</button> 
+</div>
+<div *ngIf="user.aadharno"  style="padding-top: 50px; display: inline-block;">
+    <p>User details:</p>
+    <p> Name: {{user.name}}</p>
+    <p>DOB: {{user.dob}}</p>
+    <p>Gender: {{user.gender}}</p>
+    <br><br>
+    <p>This Is your Aadhar Card</p>
+    <div style="display:inline-block;">
+    <img src="assets/top.png">
+    <div>
+    <img src="assets/pic.png" style="margin-right:8px">
+    <div style="display:inline-block;margin-top: 18px; margin-right: 20px;">
+        <p > Name: {{user.name}}</p>
+        <p>DOB: {{user.dob}}</p>
+        <p>Gender: {{user.gender}}</p>
+    </div>
+    <img src="assets/qr.png">
+</div>
+<div>
+    <p style="margin-left:120px;">Aadhar no: {{user.aadharno}}</p>
+    <img src="assets/bottom.png">
+</div>
+</div>
+<br><br>
+<button type="button" style="margin:8px;" class="btn btn-primary" (click)="update(user.mail)">Update</button>
+ <button type="button" style="margin:8px;" class="btn btn-primary" (click)="Duplicate(user.mail)">Duplicate</button>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <!--<link rel="stylesheet" href="employees.component.css">-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        <div class="jumbotron" style="margin: 25px; text-align: center;">
+            <h2 style="text-align: center;padding-top: 5%">Register</h2>
+            <form #contactForm="ngForm" (ngSubmit)="registerUser(contactForm.value)" style="text-align: center;padding:20px; width: 40%;margin-left: 30%;">
+
+              <div class="form-group">
+              <label for="firstName">First Name</label>
+                 <input required ngModel name="firstName" type="text" #firstName="ngModel" class="form-control" id="firstName" placeholder="First Name" style="padding-right: 60px;margin-left: 80px">
+                <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+                    <div *ngIf="firstName.errors?.required">First Name is required.</div>
+                    </div>
+               
+                </div>
+
+               <div class="form-group">
+                <label for="lastName">Last Name</label>
+              <input required ngModel name="lastName" type="text" #lastName="ngModel" class="form-control" id="lastName" placeholder="Last Name"  style="padding-right: 60px;margin-left: 55px;margin-bottom: 20px"> 
+               <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+                <div *ngIf="lastName.errors?.required">Last Name is required.</div>
+                </div>  
+               
+              </div>
+
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                  <input required ngModel name="gender" type="text" #gender="ngModel" class="form-control" id="gender" placeholder="Gender"  style="padding-right: 60px;margin-left: 55px;margin-bottom: 20px"> 
+                   <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+                    <div *ngIf="lastName.errors?.required">Last Name is required.</div>
+                    </div>  
+                   
+                </div>
+
+              <div class="form-group">
+                <label for="email">Phone</label>
+                      <input required ngModel name="email" type="text" #email="ngModel" class="form-control" id="email" placeholder="Phone"  style="padding-right: 60px;margin-left: 55px;margin-bottom: 20px"> 
+                       <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+                        <div *ngIf="lastName.errors?.required">Last Name is required.</div>
+                        </div>  
+                          
+              </div>
+
+              <div class="form-group">
+                <label for="passwd">Password</label>
+                <input required ngModel name="passwd" type="password" #passwd="ngModel" class="form-control" id="passwd" placeholder="Last Name"  style="padding-right: 60px;margin-left: 55px;margin-bottom: 20px"> 
+                   <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+                    <div *ngIf="lastName.errors?.required">Last Name is required.</div>
+                    </div>  
+                       
+              </div>
+
+              <div class="form-group">
+                <label for="dob">DOB</label>
+                 <input required ngModel name="dob" type="text" #dob="ngModel" class="form-control" id="dob" placeholder="yyyy-mm-dd"  style="padding-right: 60px;margin-left: 55px;margin-bottom: 20px"> 
+                   <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+                    <div *ngIf="lastName.errors?.required">Last Name is required.</div>
+                    </div>  
+                          
+              </div>
+
+              <div class="form-group">
+                <label for="address">Address</label>
+                 <input required ngModel name="address" type="text" #dob="ngModel" class="form-control" id="address" placeholder="Address"  style="padding-right: 60px;margin-left: 55px;margin-bottom: 20px"> 
+                   <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+                    <div *ngIf="lastName.errors?.required">Last Name is required.</div>
+                    </div>  
+                      
+              </div>
+
+              <div class="form-group">
+                <label for="pincode">Pincode</label>
+            <input required ngModel name="pincode" type="text" #dob="ngModel" class="form-control" id="pincode" placeholder="pincode"  style="padding-right: 60px;margin-left: 55px;margin-bottom: 20px"> 
+                   <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+                    <div *ngIf="lastName.errors?.required">Last Name is required.</div>
+                    </div>  
+                   
+              </div>
+              <br>
+                <button class="btn btn-primary" type="submit" [class.disabled]="!contactForm.valid">Submit</button>      
+ 
+
+            </form>
+        </div>
+      </div>
+
+
+
+
+</body>
+</html>
